@@ -1,0 +1,97 @@
+LAN-IOT Signer - Certificate Authority Signer Service
+Copyright 2025 Carlos Huggins & LAN-IOT Project Contributors
+
+This product includes software developed by the LAN-IOT Project.
+
+Core Contributors:
+  - Carlos Huggins (GitHub: carloshuggins)
+
+For a complete list of contributors, see CONTRIBUTORS.md or the Git commit history.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+================================================================================
+
+This software is built using the following third-party components:
+
+Express
+Copyright (c) 2009-2014 TJ Holowaychuk and Express contributors
+Licensed under the MIT License
+https://github.com/expressjs/express
+
+Helmet
+Copyright (c) Adam Baldwin and Helmet contributors
+Licensed under the MIT License
+https://github.com/helmetjs/helmet
+
+cors
+Copyright (c) 2013 Troy Goode and CORS contributors
+Licensed under the MIT License
+https://github.com/expressjs/cors
+
+Morgan
+Copyright (c) 2014 Jonathan Ong and Morgan contributors
+Licensed under the MIT License
+https://github.com/expressjs/morgan
+
+express-rate-limit
+Copyright (c) 2015 Nathan Friedly and express-rate-limit contributors
+Licensed under the MIT License
+https://github.com/express-rate-limit/express-rate-limit
+
+Zod
+Copyright (c) 2020 Colin McDonnell
+Licensed under the MIT License
+https://github.com/colinhacks/zod
+
+ipaddr.js
+Copyright (c) 2011-2022 whitequark and ipaddr.js contributors
+Licensed under the MIT License
+https://github.com/whitequark/ipaddr.js
+
+dotenv
+Copyright (c) 2015 Scott Motte and dotenv contributors
+Licensed under the BSD 2-Clause License
+https://github.com/motdotla/dotenv
+
+OpenSSL
+Copyright (c) The OpenSSL Project
+Licensed under the Apache License 2.0
+https://www.openssl.org/
+
+================================================================================
+
+NOTICE:
+This software is designed to work with IoT devices and provides certificate
+signing services. Users must provide their own:
+- Intermediate CA certificate and private key
+- Authentication tokens for API access
+- Secure infrastructure for deployment
+
+The software does not include or provide access to certificate authorities,
+intermediate certificates, or authentication credentials.
+
+The example configurations and documentation references are for illustrative
+purposes only. Users are responsible for:
+- Securing their own credentials and certificates
+- Implementing proper security measures in production
+- Protecting their intermediate CA private keys
+- Managing certificate lifecycles appropriately
+- Complying with PKI best practices and regulations
+
+For production deployments, it is strongly recommended to:
+- Use Hardware Security Modules (HSM) or Key Management Systems (KMS)
+- Implement device-specific authentication and allowlists
+- Keep certificate lifetimes short (1-7 days)
+- Monitor and audit all certificate signing requests
+- Follow industry security standards and best practices
